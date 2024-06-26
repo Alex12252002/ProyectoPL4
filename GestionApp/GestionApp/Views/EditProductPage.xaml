@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.EditProductPage"
+             Title="Editar Producto">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Image Source="logo.png" HeightRequest="100" />
+            <Label Text="Editar Producto" FontSize="24" HorizontalOptions="Center" />
+            <Entry x:Name="NameEntry" Placeholder="Nombre del Producto" />
+            <Entry x:Name="DescriptionEntry" Placeholder="Descripción" />
+            <Entry x:Name="PriceEntry" Placeholder="Precio" Keyboard="Numeric" />
+            <Entry x:Name="StockEntry" Placeholder="Stock" Keyboard="Numeric" />
+            <Label Text="Seleccionar Proveedores" FontSize="24" HorizontalOptions="Center" />
+            <ListView x:Name="ProviderListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox IsChecked="{Binding IsSelected}" />
+                                <Label Text="{Binding Provider.Name}" VerticalOptions="Center" />
+                                <Label Text="{Binding Provider.Email}" VerticalOptions="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Guardar" BackgroundColor="Black" TextColor="White" Clicked="OnSaveButtonClicked" FontSize="Small" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

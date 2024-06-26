@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30" >
+            <Image Source="logo.jpg" HeightRequest="100" />
+            <Entry x:Name="EmailEntry" Placeholder="Correo" />
+            <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True" />
+            <Button Text="Iniciar Sesión" BackgroundColor="Black" TextColor="White" Clicked="OnLoginButtonClicked"/>
+            <Button Text="Crear Cuenta" BackgroundColor="White" TextColor="Black" Clicked="OnCreateAccountButtonClicked"/>
+            
+            <Label Text="By clicking continue, you agree to our Terms of Service and Privacy Policy" FontSize="12" TextColor="Gray" HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

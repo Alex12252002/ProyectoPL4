@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.CreateProductPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Entry x:Name="NameEntry" Placeholder="Cedula" />
+            <Entry x:Name="DescriptionEntry" Placeholder="Nombres" />
+            <Entry x:Name="PriceEntry" Placeholder="Apellidos" Keyboard="Numeric" />
+            <Entry x:Name="StockEntry" Placeholder="Telefono" Keyboard="Numeric" />
+            
+            <ListView x:Name="ProviderListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Provider.Name}" VerticalOptions="Center" />
+                                <Switch IsToggled="{Binding IsSelected}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Guardar Empleado" Clicked="OnSaveButtonClicked" BackgroundColor="Green" TextColor="White" FontSize="Small" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

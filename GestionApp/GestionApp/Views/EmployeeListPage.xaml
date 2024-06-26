@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.EmployeeListPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Button Text="Agregar Usuario" Clicked="OnAddEmployeeButtonClicked" />
+            <Label Text="Administradores" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+            <ListView x:Name="AdminListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="10">
+                                <Label Text="{Binding Username}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Email}" />
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                    <Button Text="Editar" CommandParameter="{Binding .}" Clicked="OnEditEmployeeButtonClicked" FontSize="Small" />
+                                    <Button Text="Eliminar" CommandParameter="{Binding .}" Clicked="OnDeleteEmployeeButtonClicked" FontSize="Small"  />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Empleados" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+            <ListView x:Name="EmployeeListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="10">
+                                <Label Text="{Binding Username}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Email}" />
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                    <Button Text="Editar" CommandParameter="{Binding .}" Clicked="OnEditEmployeeButtonClicked" FontSize="Small" />
+                                    <Button Text="Eliminar" CommandParameter="{Binding .}" Clicked="OnDeleteEmployeeButtonClicked" FontSize="Small" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

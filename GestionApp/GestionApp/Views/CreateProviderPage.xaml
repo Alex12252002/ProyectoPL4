@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.CreateProviderPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Label Text="Crear Vehiculo" FontSize="24" HorizontalOptions="Center" />
+            <Entry x:Name="NameEntry" Placeholder="Placa" />
+            <Entry x:Name="ContactEntry" Placeholder="Modelo" Keyboard="Numeric" />
+            <Entry x:Name="EmailEntry" Placeholder="Marca" Keyboard="Email" />
+            <Entry x:Name="EmailEntrys" Placeholder="Anio" Keyboard="Email" />
+            <Button Text="Guardar" BackgroundColor="Black" TextColor="White" Clicked="OnSaveButtonClicked" FontSize="Small"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

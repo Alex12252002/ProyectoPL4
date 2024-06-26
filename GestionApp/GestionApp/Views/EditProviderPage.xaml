@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.ViewModels.EditProviderPage"
+    Title="Editar Proveedor">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Image Source="logo.png" HeightRequest="100" />
+            <Label Text="Editar Proveedor" FontSize="24" HorizontalOptions="Center" />
+            <Entry x:Name="NameEntry" Placeholder="Nombre del Proveedor" />
+            <Entry x:Name="ContactEntry" Placeholder="Contacto" />
+            <Entry x:Name="EmailEntry" Placeholder="Correo" />
+            <Button Text="Guardar" BackgroundColor="Black" TextColor="White" Clicked="OnSaveButtonClicked" FontSize="Small" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

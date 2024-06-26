@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.ViewModels.ProductListPage"
+    Title="Empleados">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Button Text="Nuevo Empleado" BackgroundColor="Green" TextColor="White" Clicked="OnAddProductButtonClicked" />
+            <ListView x:Name="ProductListView" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Gray">
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="Cedula" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                        <Label Text="Nombres" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                        <Label Text="Apellidos" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                        <Label Text="Telefono" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Small" />
+                                    <Label Text="{Binding Description}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Small" />
+                                    <Label Text="{Binding Price}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Small" />
+                                    <Label Text="{Binding Stock}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Small" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                                    <Button Text="Editar" CommandParameter="{Binding .}" Clicked="OnEditProductButtonClicked" WidthRequest="80" FontSize="Small" />
+                                    <Button Text="Eliminar" CommandParameter="{Binding .}" Clicked="OnDeleteProductButtonClicked" WidthRequest="80" FontSize="Small" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

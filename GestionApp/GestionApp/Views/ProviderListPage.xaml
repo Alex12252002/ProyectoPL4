@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.ProviderListPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Button Text="Nuevo Vehiculo" BackgroundColor="Green" TextColor="White" Clicked="OnAddProviderButtonClicked" />
+            <ListView x:Name="ProviderListView" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Gray">
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="Placa" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                        <Label Text="Modelo" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                        <Label Text="Marca" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                        <Label Text="Anio" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Small" />
+                                    <Label Text="{Binding Contact}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Small" />
+                                    <Label Text="{Binding Email}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Small" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                                    <Button Text="Editar" CommandParameter="{Binding .}" Clicked="OnEditProviderButtonClicked" WidthRequest="80" FontSize="Small" />
+                                    <Button Text="Eliminar" CommandParameter="{Binding .}" Clicked="OnDeleteProviderButtonClicked" WidthRequest="80" FontSize="Small" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

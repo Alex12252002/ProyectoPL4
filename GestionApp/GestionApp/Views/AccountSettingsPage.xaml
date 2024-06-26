@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.AccountSettingsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Image x:Name="ProfileImageView" HeightRequest="100" />
+            <Button Text="Cambiar Imagen de Perfil" Clicked="OnChangeProfileImageClicked"/>
+            <Entry x:Name="CedulaOrRucEntry" Placeholder="Cédula o RUC" Keyboard="Numeric"/>
+            <Entry x:Name="UsernameEntry" Placeholder="Nombre de usuario"/>
+            <Entry x:Name="EmailEntry" Placeholder="Correo"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True"/>
+            <Button Text="Guardar Cambios" BackgroundColor="Black" TextColor="White" Clicked="OnSaveButtonClicked" />
+            <Button Text="Cerrar Sesión" BackgroundColor="Red" TextColor="White" Clicked="OnLogoutButtonClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

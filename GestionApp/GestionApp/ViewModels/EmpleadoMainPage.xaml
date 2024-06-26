@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.EmpleadoMainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Configuración" IconImageSource="settings_icon.png" Clicked="OnSettingsClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Empleados"  BackgroundColor="#343115"  TextColor="AntiqueWhite" Clicked="OnProductsButtonClicked" AnchorX="1" AnchorY="1" />
+                <Button Text="Vehiculo" BackgroundColor="#343115" TextColor="AntiqueWhite" Clicked="OnProvidersButtonClicked" AnchorX="1" AnchorY="1" />
+            </StackLayout>
+            <Label Text="Bienvenidos Empleado" FontSize="24" HorizontalOptions="Center" />
+            <StackLayout Padding="10" BackgroundColor="LightGray" Margin="0,10,0,10">
+                <Label Text="Guía de Uso" FontSize="18" FontAttributes="Bold" />
+                <Label Text="Como empleado, tienes los siguientes permisos:" FontSize="16" />
+                <Label Text="1. Gestionar empleados: Puedes agregar, editar y ver empleados." FontSize="14" />
+                <Label Text="2. Gestionar vehiculos: Puedes agregar, editar y ver vehiculos." FontSize="14" />
+                <Label Text="3. Configuración: Puedes modificar tu perfil." FontSize="14" />
+            </StackLayout>
+           
+               
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

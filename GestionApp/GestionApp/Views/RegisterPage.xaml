@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionApp.Views.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Image Source="logo.png" HeightRequest="100" />
+            <Entry x:Name="UsernameEntry" Placeholder="Nombre de usuario" />
+            <Entry x:Name="CedulaOrRucEntry" Placeholder="Cédula o Ruc" />
+            <Entry x:Name="EmailEntry" Placeholder="Correo" />
+            <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True" />
+            <Label Text="Registrarse como Administrador" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Button Text="Registrar" BackgroundColor="Black" TextColor="White" Clicked="OnRegisterButtonClicked" />
+            <Label Text="By clicking continue, you agree to our Terms of Service and Privacy Policy" FontSize="12" TextColor="Gray" HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
